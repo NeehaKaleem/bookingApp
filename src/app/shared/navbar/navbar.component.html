@@ -1,0 +1,158 @@
+<div>
+  <div class="navbar-row d-flex">
+    <div>
+      <img src="../../../assets/images/logo.png" class="logo-image" alt="" />
+    </div>
+    <div class="menu-bar">
+      <svg
+        class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        class="hamburgar"
+        height="32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill="none" d="M0 0h24v24H0V0z"></path>
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+      </svg>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li class="dropdown-item">
+          <img
+            src="../../../assets/images/user.jpg"
+            class="rounded-circle"
+            style="width: 40px"
+            alt="Avatar"
+          />
+        </li>
+        <a class="text-decoration-none" routerLink="/main"
+          ><li class="dropdown-item d-menu-item" routerLinkActive="active">
+            Stays
+          </li></a
+        >
+        <a class="text-decoration-none" routerLink="/experiences"
+          ><li class="dropdown-item d-menu-item" routerLinkActive="active">
+            Experiences
+          </li></a
+        >
+        <a class="text-decoration-none" routerLink="/online-experiences">
+          <li class="dropdown-item d-menu-item" routerLinkActive="active">
+            Online Experiences
+          </li></a
+        >
+      </ul>
+    </div>
+    <div class="horizontal-nav">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Stays </a>
+          <a class="nav-item nav-link" href="#">Experiences</a>
+          <a class="nav-item nav-link" href="#">Online Experiences</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="horizontal-nav">
+      <img
+        src="../../../assets/images/user.jpg"
+        class="rounded-circle"
+        style="width: 40px"
+        alt="Avatar"
+      />
+    </div>
+  </div>
+  <div class="sub-navbar-row d-flex" id="sub-header">
+    <div>
+      <div class="toggler d-flex">
+        <div class="toggler-icon toggler-left-bg">
+          <img
+            src="../../../assets/images/tog-icon1.png"
+            style="width: 30px"
+            alt="Avatar"
+          />
+        </div>
+        <div class="toggler-icon">
+          <img
+            src="../../../assets/images/tog-icon2.png"
+            style="width: 30px"
+            alt="Avatar"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="d-flex menu-div">
+      <div class="dropdown">
+        <button
+          class="btn menu-select sub-header-items"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+        >
+          {{ selectedMenu }}
+          <img
+            src="../../../assets/images/menu_down_icon.svg"
+            style="width: 20px"
+            alt=""
+          />
+        </button>
+        <div
+          class="dropdown-menu menu-list"
+          aria-labelledby="dropdownMenuButton"
+        >
+          <a
+            class="dropdown-item menu-list-item pointer"
+            *ngFor="let item of menu"
+            (click)="selectMenu(item)"
+            >{{ item }}</a
+          >
+        </div>
+      </div>
+      <div class="date-picker sub-header-items ml-3">
+        <img
+          src="../../../assets/images/calendar_icon.svg"
+          style="width: 20px"
+          alt=""
+        />
+        <span class="ml-2"> June 14 - 21 </span>
+      </div>
+      <div class="guest-count sub-header-items ml-3">
+        <button
+          type="button"
+          class="count-btn"
+          [disabled]="totalGuest <= 0"
+          (click)="subtractGuest()"
+        >
+          <img
+            src="../../../assets/images/minus_icon.svg"
+            style="width: 16px"
+            alt=""
+          />
+        </button>
+        <div class="mx-3">{{ totalGuest }} guests</div>
+        <div type="button" class="count-btn" (click)="addGuest()">
+          <img
+            src="../../../assets/images/plus_icon.svg"
+            style="width: 16px"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="sub-header-items filter-btn pointer" (click)="setModalValue()">
+      <img
+        src="../../../assets/images/filter_icon.svg"
+        style="width: 20px"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

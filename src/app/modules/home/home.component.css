@@ -1,0 +1,126 @@
+
+  .cards-section {
+   border-radius: 20px;
+   height: 380px;
+
+  }
+  .card-image-style{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 200px;
+  }
+  .card-bottom{
+    display:flex;
+    justify-content: space-between;
+    background-color: transparent;
+
+  }
+  .title-font{
+    font-size: 18px;
+  }
+  .text-font{
+    font-size: 14px;
+  }
+  .font-12{
+    font-size: 12px !important;
+  }
+  .grey-bottom-border{
+    border-bottom: 1px solid  rgba(17, 17, 17, 0.1);
+  }
+  .grey-border-top{
+    border-top: 1px solid  rgba(17, 17, 17, 0.1);
+    padding:0px !important;
+  }
+  .btns-filter{
+    height: 36px;
+    min-width:55px;
+    border:1px solid rgba(17, 17, 17, 0.2);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .btns-filter:hover{
+    border:1px solid black;
+  }
+  .btns-filter.active{
+    border:1px solid black;
+    background-color: black;
+    color:white
+  }
+  .filter-modal-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:sticky;
+    bottom:0;
+    background-color: white;
+
+    
+  }
+  .font-17{
+    font-size: 17px !important;
+  }
+  input[type=checkbox] {
+    line-height: normal;
+    width: 20px;
+    height: 20px;
+
+    }
+  .grey-bottom-bold-border{
+    border-bottom: 2px solid  rgba(17, 17, 17, 0.1);
+  }
+  #max{
+    border-radius: 12px !important;
+    height:48px
+  }
+  #min{
+    border-radius: 12px !important;
+    height:48px
+  }
+  .font-bold{
+    font-weight: 600;
+  }
+  .filter-modal-body{
+    padding: 24px 0px 0px;
+  }
+  .footer-btn{
+    text-align: center;
+    width: 350px;
+    height: 48px;
+    background-color: rgb(211, 59, 80);
+    border-radius: 12px;
+  }
+  .red-text{
+    color: rgb(211, 59, 80)
+  }
+  .grey-text{
+    color:#717171
+  }
+  .font-bold{
+    font-weight: 600;
+  }
+  .star-img{
+    width: 16px; 
+    height: 16px
+  }
+  .like-btn{
+    background-color: white;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top:-8px;
+    border-radius: 40px;
+  }
+  .like-btn:hover {
+    background-color: black;
+  }
+  .pointer{
+    cursor: pointer;
+  }
+/*---------------------------------*/
+  

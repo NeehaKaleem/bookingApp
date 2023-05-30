@@ -1,0 +1,16 @@
+<div
+  id="leftSidebar"
+  class="sidebar"
+  (mouseover)="toggleSidebar()"
+  (mouseout)="toggleSidebar()"
+>
+  <a
+    *ngFor="let item of sidebarList"
+    class="pointer"
+    (click)="selectedItem = item.name"
+    [ngClass]="item.name === selectedItem ? 'active' : ''"
+  >
+    <img [src]="item.iconSrc" style="width: 24px" class="item-icon" alt="" />
+    <span class="item-text">{{ item.name }}</span></a
+  >
+</div>

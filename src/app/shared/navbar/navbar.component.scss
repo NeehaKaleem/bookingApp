@@ -1,0 +1,141 @@
+@import "../../../breakpoints.scss";
+.navbar-row {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  opacity: 1;
+  height: 70px;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+}
+.sub-navbar-row {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  opacity: 1;
+  height: 70px;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+}
+.logo-image {
+  object-fit: cover;
+  height: 47px;
+  width: 102px;
+}
+.active {
+  border-bottom: 3px solid rgb(255, 56, 92);
+  font-weight: 500;
+  color: black;
+}
+.navbar-nav {
+  height: 70px;
+  width: 100%;
+}
+.nav-link {
+  align-items: center;
+  color: #717171;
+  display: flex;
+  margin: 0px 1rem;
+}
+.toggler {
+  border-radius: 12px;
+  height: 48px;
+  background-color: #f3f3f2;
+}
+.toggler-icon {
+  border-radius: 8px;
+  height: 48px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 48px;
+}
+.toggler-left-bg {
+  background-color: black;
+}
+@include tablet {
+  .menu-div {
+    flex-direction: column !important;
+  }
+  .sub-navbar-row {
+    height: 160px;
+  }
+  .date-picker {
+    width: 100%;
+    margin: 5px 0px !important;
+  }
+  .guest-count {
+    width: 100%;
+    margin: 0px !important;
+  }
+}
+@include tablet-lg {
+  .menu-bar {
+    display: block !important;
+  }
+  .horizontal-nav {
+    display: none;
+  }
+}
+.menu-bar {
+  display: none;
+}
+.menu-select {
+  width: 240px;
+  color: rgb(17, 17, 17);
+  justify-content: space-between;
+  border-radius: 12px;
+}
+.menu-select:focus {
+  box-shadow: none;
+}
+.menu-list {
+  width: 240px;
+  border-radius: 5px;
+}
+.menu-list-item:active {
+  background-color: transparent !important;
+}
+.date-picker {
+  padding: 0px 16px;
+  border-radius: 12px;
+}
+.guest-count {
+  padding: 0px 10px;
+  border-radius: 12px;
+}
+.pointer {
+  cursor: pointer;
+}
+.count-btn {
+  background-color: white;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-color: transparent;
+  border-radius: 8px;
+}
+.count-btn:focus {
+  outline: none;
+}
+.sub-header-items {
+  height: 48px;
+  background-color: rgb(243, 243, 242);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.filter-btn {
+  border-radius: 8px;
+  padding: 0px 14px;
+}
+.sub-nav-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+}

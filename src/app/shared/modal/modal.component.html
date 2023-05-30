@@ -1,0 +1,15 @@
+<div id="filterOverlay" (click)="close()">
+  <div
+    [ngStyle]="{
+      width: customWidth ? customWidth : 'auto',
+      'max-width': customMaxWidth ? customMaxWidth : '',
+      height: customHeight ? customHeight : 'auto',
+      'max-height': customMaxHeight ? customMaxHeight : ''
+    }"
+    id="modal"
+    class="bridge-modal animate__animated"
+  >
+    <!-- <span (click)="close()" class="close">&times;</span> -->
+    <ng-container *ngTemplateOutlet="template_!"></ng-container>
+  </div>
+</div>

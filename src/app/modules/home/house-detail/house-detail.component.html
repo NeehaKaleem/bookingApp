@@ -1,0 +1,1247 @@
+<div class="house-modal">
+  <!-- [@divAnimation] -->
+  <!-- <button type="button" class="btn__close" aria-label="Close"  >
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button> -->
+  <!-- [@buttonAnimation] -->
+  <div
+    class="btn__close"
+    (click)="closeHouseDetail()"
+    style="opacity: 1; transform: translateX(0%) translateZ(0px)"
+  >
+    <svg
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
+      viewBox="0 0 24 24"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill="none" d="M0 0h24v24H0z"></path>
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      ></path>
+    </svg>
+  </div>
+  <div
+    class="house-modal__content"
+    style="transform: translateX(0%) translateZ(0px)"
+  >
+    <div class="house-details">
+      <div class="house-details__images row">
+        <div
+          class="house-details__image col-lg-7 col-md-8 col-sm-8 col-xs-8 col-8"
+        >
+          <div class="house-details__image--1">
+            <img src="{{ house.picture }}" alt="" loading="lazy" /><span
+              class="viewAll"
+              style="cursor: pointer"
+              >View All Photos</span
+            >
+          </div>
+        </div>
+        <div
+          class="house-details__image d-flex flex-column justify-content-between gap-4 col-lg-5 col-md-4 col-sm-4 col-xs-4 col-4"
+        >
+          <div class="house-details__image--2 mb-1">
+            <img src="{{ house.picture }}" alt="" loading="lazy" />
+          </div>
+          <div class="house-details__image--3">
+            <img src="{{ house.picture }}" alt="" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="house-details__content">
+        <div class="house-details__content--checkout">
+          <div class="checkout__container">
+            <div class="checkout">
+              <div class="checkout__details">
+                <div class="checkout__top">
+                  <p><b> $ 8 </b>/ night</p>
+                  <span
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="20"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g fill="none">
+                        <path d="M0 0h24v24H0V0z"></path>
+                        <path d="M0 0h24v24H0V0z"></path>
+                      </g>
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+                      ></path>
+                    </svg>
+                    {{ house.average_rating | number : "1.1-2" }}</span
+                  >
+                </div>
+                <div class="checkout__date">
+                  <div>
+                    <div class="form__group">
+                      <p style="color: rgb(113, 113, 113)">Check In</p>
+                      <div class="form__group-input">
+                        <svg
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          height="20"
+                          width="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                          ></path></svg
+                        >6/14/2023
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="form__group">
+                      <p style="color: rgb(113, 113, 113)">Check Out</p>
+                      <div class="form__group-input">
+                        <svg
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          height="20"
+                          width="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                          ></path></svg
+                        >6/21/2023
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="form__group">
+                    <p style="color: rgb(113, 113, 113)">Guests</p>
+                    <div class="form__group-input">
+                      1 guest
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="1.5"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        class="ms-auto"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout__breakdown">
+                  <div class="checkout__desc">
+                    <p>
+                      5 nights
+                      <svg
+                        class="t-icon"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path
+                          d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                        ></path>
+                      </svg>
+                    </p>
+                    <span>$4,250</span>
+                  </div>
+                  <div class="checkout__desc">
+                    <p>
+                      Cleaning fee
+                      <svg
+                        class="t-icon"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path
+                          d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                        ></path>
+                      </svg>
+                    </p>
+                    <span>$85</span>
+                  </div>
+                  <div class="checkout__desc">
+                    <p>
+                      Airbnb service fee
+                      <svg
+                        class="t-icon"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path
+                          d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                        ></path>
+                      </svg>
+                    </p>
+                    <span>$322</span>
+                  </div>
+                </div>
+              </div>
+              <div class="checkout__total">
+                <div class="total__price">
+                  <span
+                    ><b>Total</b
+                    ><small class="before-texas">Before taxes</small></span
+                  >
+                  <p>$4,657</p>
+                </div>
+                <div class="checkout__button"><button>Reserve</button></div>
+              </div>
+            </div>
+            <div class="gem__content">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                color="#ff385c"
+                height="40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+                style="color: rgb(255, 56, 92)"
+              >
+                <path
+                  d="M1018.72 295.472L878.848 28.03C870.688 12.43 849.584-.322 832-.322H510.064c-.351-.015-.703-.11-1.054-.127-.288 0-.56.113-.849.128h-316.16c-17.6 0-38.752 12.72-47.024 28.256L5.473 290.223c-8.289 15.536-6.624 39.937 3.631 54.257l480.016 669.152c5.153 7.184 12 10.815 18.832 10.815 6.785 0 13.584-3.536 18.768-10.591L1014.624 349.6c10.384-14.193 12.256-38.544 4.096-54.128zm-76.353-7.843H770.911l68.656-196.608zM575.343 63.677h205.968l-63.888 182.928zm92.895 223.952H370.591L511.263 85.533zm-354.351-30.544L249.71 63.677h198.816zm366.863 94.544L508.718 844.173 345.262 351.629H680.75zM436.926 831.085L92.99 351.629h184.832zm311.616-479.456H933.71l-352.976 480.56zM188.478 82.413l68.096 205.216H79.326z"
+                ></path>
+              </svg>
+              <div>
+                <h6>This is a rare find</h6>
+                <p>Kathryn's place on Airbnb is usually fully booked.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="house-details__content--info">
+          <div class="house__info">
+            <span class="medal">
+              <!-- <svg stroke="currentColor" fill="currentColor"
+                                stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M140.5 19.156V192.28l21.813 28.532h15.53V19.156H140.5zm56.03 0v201.656h122.064V19.156H196.53zm140.75 0v201.656h12.345l22.094-28.53V19.155h-34.44zM173.94 239.5v18.125H338.03V239.5H173.94zm30.78 36.813l8.032 10.53c-25.262 12.014-45.128 33.46-55.094 59.813l65.03 47.47 5.47 3.968-2.094 6.437-17.312 53.69 45.656-33.064 5.5-3.97 5.47 3.97 62.468 45.22c24.872-19.957 40.78-50.6 40.78-85.063 0-6.494-.573-12.854-1.655-19.032l-58.845 42.94-11-15.095L361.688 347c-10.683-28.55-32.932-51.392-61.125-62.78l6.125-7.908h-38.813l-25.5 78-17.75-5.812 23.594-72.188h-43.5zm-52.374 89.625c-1.123 6.286-1.72 12.76-1.72 19.375 0 32.163 13.84 61.008 35.907 80.937l19.69-61.03-53.876-39.283zm107.562 78.343l-51.53 37.314c15.266 8.124 32.707 12.72 51.25 12.72 18.673-.002 36.218-4.676 51.562-12.908l-51.282-37.125z">
+                                </path>
+                            </svg>  -->
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                id="svg-77740580_2265"
+              >
+                <path
+                  d="M12.9168 16.667C12.9168 18.2776 11.611 19.5833 10.0002 19.5833C8.38937 19.5833 7.0835 18.2776 7.0835 16.667C7.0835 15.0565 8.38936 13.75 10.0002 13.75C11.611 13.75 12.9168 15.0565 12.9168 16.667ZM4.58778 1.1774L4.5835 7.95937C4.5835 8.341 4.76418 8.70098 5.07417 8.93512L9.30526 12.1282C9.71115 12.4348 10.2789 12.4348 10.6856 12.129L14.9202 8.94012C15.2302 8.70764 15.4117 8.34767 15.4125 7.96687C15.4134 6.50698 15.416 2.79144 15.4168 1.18323C15.4168 0.763267 15.0666 0.42246 14.6341 0.42246L5.37046 0.416627C4.93887 0.415795 4.58863 0.756601 4.58778 1.1774Z"
+                  fill="#FFFFFF"
+                ></path>
+                <path
+                  d="M14.1668 7.91663L10.0002 4.83226L14.1668 1.66663V7.91663ZM9.05914 15.5729C8.62428 15.8379 8.3335 16.3031 8.3335 16.8349C8.3335 17.663 9.03102 18.3333 9.89196 18.3333C10.5737 18.3333 11.1456 17.9112 11.3582 17.3254L9.05914 15.5729Z"
+                  fill="#FFB400"
+                ></path>
+                <path
+                  d="M14.1668 7.91663L10.0002 11.0416L5.8335 7.91663V1.66663L14.1668 7.91663Z"
+                  fill="#FF5A5F"
+                ></path>
+                <path
+                  d="M9.99984 20C8.16146 20 6.6665 18.505 6.6665 16.6675C6.6665 14.8291 8.16146 13.3333 9.99984 13.3333C11.8382 13.3333 13.3332 14.8291 13.3332 16.6675C13.3332 18.505 11.8382 20 9.99984 20ZM9.99984 14.1667C8.62126 14.1667 7.49984 15.2889 7.49984 16.6675C7.49984 18.0452 8.62126 19.1667 9.99984 19.1667C11.3784 19.1667 12.4998 18.0452 12.4998 16.6675C12.4998 15.2889 11.3784 14.1667 9.99984 14.1667ZM10.0031 12.6465C9.62305 12.6465 9.243 12.5578 8.95166 12.3828L4.74674 9.1626C4.35531 8.85905 4.1665 8.45215 4.1665 7.91667V1.25C4.16732 0.939128 4.30648 0.622559 4.54818 0.380859C4.78988 0.138753 5.10563 0 5.41569 0H5.41732H14.5832C15.2375 0 15.8332 0.595703 15.8332 1.25V7.85645C15.8324 8.42 15.6313 8.87126 15.2537 9.16219L11.0863 12.356C10.7941 12.5505 10.3986 12.6465 10.0031 12.6465ZM5.41488 0.833333C5.3278 0.833333 5.22119 0.885417 5.13737 0.969645C5.05273 1.05469 4.99984 1.16211 4.99984 1.25081V7.91667C4.99984 8.19214 5.07389 8.36182 5.25537 8.5026L9.4196 11.6951C9.6971 11.8579 10.3245 11.862 10.6037 11.6781L14.7467 8.50098C14.9136 8.3724 14.999 8.1547 14.9998 7.85522V1.24959C14.9998 1.05916 14.7736 0.833333 14.5832 0.833333H5.4165C5.4165 0.833333 5.41569 0.833333 5.41488 0.833333Z"
+                  fill="#484848"
+                ></path>
+              </svg>
+              Superhost</span
+            >
+
+            <div class="row">
+              <div class="col-9">
+                <h3 class="house__info-name">{{ house.title }}</h3>
+                <p class="house__info-location">{{ house.description }}</p>
+                <div class="house__info--features">
+                  <span>
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="18"
+                      height="20"
+                      viewBox="0 0 18 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="svg139911756_1408"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.62158 5.62335C6.00229 5.62335 7.12158 4.50406 7.12158 3.12335C7.12158 1.74264 6.00229 0.623352 4.62158 0.623352C3.24087 0.623352 2.12158 1.74264 2.12158 3.12335C2.12158 4.50406 3.24087 5.62335 4.62158 5.62335Z"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9 11.25C9 8.83375 7.04125 6.875 4.625 6.875C2.20875 6.875 0.25 8.83375 0.25 11.25V13.125H2.125L2.75 19.375H6.5L7.125 13.125H9V11.25Z"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M12.1216 16.8742V10H16.4999C17.1903 10 17.7499 10.5596 17.7499 11.25V16.875C17.7499 17.5654 17.1903 18.125 16.4999 18.125H13.3749"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.1216 19.3734C12.8119 19.3734 13.3716 18.8137 13.3716 18.1234C13.3716 17.433 12.8119 16.8734 12.1216 16.8734C11.4312 16.8734 10.8716 17.433 10.8716 18.1234C10.8716 18.8137 11.4312 19.3734 12.1216 19.3734Z"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M12.1216 4.99835V9.99835"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                    </svg>
+                    <small>{{ house.guests }} guests</small></span
+                  ><span>
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="svg115284123_861"
+                    >
+                      <path
+                        d="M0.625 6.875L10 0.625L19.375 6.875"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M1.875 15.625H18.125V19.375H1.875V10.625"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.375 11.875H1.875V15.625H6.875V14.375C6.875 12.9943 5.75571 11.875 4.375 11.875Z"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M15.625 11.875H11.6925C10.272 11.875 8.97346 12.6777 8.33833 13.9483L7.5 15.625H18.125V14.375C18.125 12.9943 17.0057 11.875 15.625 11.875Z"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                    </svg>
+                    <small>{{ house.rooms }} bedrooms</small></span
+                  ><span>
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="20"
+                      height="16"
+                      viewBox="0 0 20 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="svg-767091662_1224"
+                    >
+                      <path
+                        d="M2.40015 7.375V5.5C2.40015 4.80964 2.9374 4.25 3.60015 4.25H8.40015C9.06289 4.25 9.60015 4.80964 9.60015 5.5V7.375"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M9.6001 7.375V5.5C9.6001 4.80964 10.1374 4.25 10.8001 4.25H15.6001C16.2628 4.25 16.8001 4.80964 16.8001 5.5V7.375"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.2001 7.375H17.0001C17.8838 7.375 18.6001 8.12119 18.6001 9.04167V13H0.600098V9.04167C0.600098 8.12119 1.31644 7.375 2.2001 7.375Z"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M0.600098 13V15.5"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M18.6001 13V15.5"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M16.8001 7.375V1.75C16.8001 1.05964 16.2629 0.5 15.6001 0.5H3.60015C2.9374 0.5 2.40015 1.05964 2.40015 1.75V7.375"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                    </svg>
+                    <small>{{ house.beds }} beds</small></span
+                  ><span>
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="16"
+                      height="20"
+                      viewBox="0 0 16 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="svg544432485_2582"
+                    >
+                      <path
+                        d="M5.96167 5.625C5.96167 2.86358 8.20025 0.625 10.9617 0.625C13.7231 0.625 15.9617 2.86358 15.9617 5.625V19.375"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.21167 9.375C2.21167 7.30393 3.8906 5.625 5.96167 5.625C8.03274 5.625 9.71167 7.30393 9.71167 9.375H2.21167Z"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M5.96167 12.5C6.13426 12.5 6.27417 12.6399 6.27417 12.8125C6.27417 12.9851 6.13426 13.125 5.96167 13.125C5.78908 13.125 5.64917 12.9851 5.64917 12.8125C5.64917 12.6399 5.78908 12.5 5.96167 12.5"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M5.96167 17.5C6.13426 17.5 6.27417 17.6399 6.27417 17.8125C6.27417 17.9851 6.13426 18.125 5.96167 18.125C5.78908 18.125 5.64917 17.9851 5.64917 17.8125C5.64917 17.6399 5.78908 17.5 5.96167 17.5"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M9.30271 12.5158C9.42291 12.4765 9.55499 12.5134 9.63729 12.6095C9.71958 12.7055 9.73587 12.8417 9.67854 12.9545C9.62122 13.0672 9.50158 13.1343 9.37549 13.1244C9.24939 13.1144 9.14171 13.0295 9.10271 12.9092C9.04961 12.7454 9.13905 12.5694 9.30271 12.5158"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M10.8511 17.27C10.9713 17.2306 11.1033 17.2676 11.1856 17.3636C11.2679 17.4597 11.2842 17.5959 11.2269 17.7086C11.1696 17.8214 11.0499 17.8884 10.9238 17.8785C10.7977 17.8686 10.6901 17.7836 10.6511 17.6633C10.598 17.4995 10.6874 17.3236 10.8511 17.27"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M2.62096 12.5158C2.50076 12.4765 2.36868 12.5134 2.28638 12.6095C2.20409 12.7055 2.1878 12.8417 2.24513 12.9545C2.30246 13.0672 2.42209 13.1343 2.54818 13.1244C2.67428 13.1144 2.78196 13.0295 2.82096 12.9092C2.87406 12.7454 2.78462 12.5694 2.62096 12.5158"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M1.0726 17.27C0.952346 17.2309 0.820412 17.2682 0.738349 17.3644C0.656285 17.4606 0.640264 17.5967 0.697759 17.7093C0.755254 17.8219 0.874935 17.8888 1.00097 17.8787C1.127 17.8687 1.23454 17.7836 1.27343 17.6633C1.29913 17.5845 1.29239 17.4988 1.25471 17.4249C1.21702 17.3511 1.15149 17.2954 1.0726 17.27"
+                        stroke="#111111"
+                        stroke-width="1.5px"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                      ></path>
+                    </svg>
+                    <small>{{ house.baths }} baths</small></span
+                  >
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="house__info-buttons">
+                  <div class="cursor-pointer btn-info">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path
+                        d="M16 5l-1.42 1.42-1.59-1.59V16h-1.98V4.83L9.42 6.42 8 5l4-4 4 4zm4 5v11c0 1.1-.9 2-2 2H6a2 2 0 01-2-2V10c0-1.11.89-2 2-2h3v2H6v11h12V10h-3V8h3a2 2 0 012 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="cursor-pointer btn-info"
+                    (click)="doFavourite(house)"
+                    [class.fav]="house.isFavourite"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-width="1.5"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about">
+            <div class="about__section">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="feature-box">
+                    <span class="feature-box__icon">
+                      <svg
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="56"
+                        height="56"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="svg-1886651520_969"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M18.991 18.25a1.5 1.5 0 0 1 1.5-1.5h9a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5v-6ZM37.95 31.335a.751.751 0 0 1-.672.415H18.705a.75.75 0 0 1-.67-.415l-.75-1.5a.75.75 0 0 1 .67-1.085h20.073a.75.75 0 0 1 .671 1.085l-.75 1.5Z"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="m21.241 31.75-2.25 7.5h1.5l4.5-7.5m9.75 0 2.25 7.5h-1.5l-4.5-7.5m-12-9h12m-7.5 3-.75 3m3.75-3 .75 3"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          clip-rule="evenodd"
+                          d="M33.991 25.75h3v3h-3v-3Z"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="m35.491 25.75 1.5-3.75"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h6>Dedicated workspace</h6>
+                    <p>
+                      A private room with wifi that’s well-suited for working.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="feature-box">
+                    <span class="feature-box__icon">
+                      <svg
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="57"
+                        height="56"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="svg-1370656206_898"
+                      >
+                        <path
+                          d="M32.084 25.75v-6a3 3 0 0 0-3-3h-8.25a3 3 0 0 0-3 3v16.5a3 3 0 0 0 3 3h6"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M38.833 34a5.25 5.25 0 1 1-5.25-5.25"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="m38.833 30.062-4.785 4.786a.658.658 0 0 1-.929 0l-1.5-1.5M17.833 35.5h7.501"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          clip-rule="evenodd"
+                          d="M25.087 22.9a1.575 1.575 0 1 0 0-3.15 1.575 1.575 0 0 0 0 3.15Zm2.759 3.545a2.756 2.756 0 1 0-5.513 0v1.181h1.182l.393 3.938h2.363l.394-3.938h1.18v-1.181Z"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h6>Self check-in</h6>
+                    <p>Check yourself in with the keypad.</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="feature-box">
+                    <span class="feature-box__icon">
+                      <svg
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="57"
+                        height="56"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="svg218840947_782"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M33.917 39.25a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="m36.59 31.506-2.904 3.873a.752.752 0 0 1-1.131.081l-1.5-1.5m-6.138-.71h-6a1.5 1.5 0 0 1-1.5-1.5V19.765a1.5 1.5 0 0 1 1.5-1.5h13.5a1.5 1.5 0 0 1 1.5 1.5v4.485"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M17.417 22.75h16.5"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M21.91 19.75v-3m7.5 3v-3"
+                          stroke="#D43B51"
+                          stroke-width="1.5px"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          fill="none"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h6>Free cancellation before Aug 20</h6>
+                    <p>
+                      A private room with wifi that’s well-suited for working.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about__section">
+              <div class="about-box">
+                <h5>About this space</h5>
+                <p>
+                  Enjoy a quiet getaway in this charming cottage renovated,
+                  designed, and owned by Chip and Joanna Gaines. Originally the
+                  carriage house for Hillcrest Estate, this home includes one
+                  bedroom, one bath, an office nook and a private back patio.
+                  This makes it the perfect getaway for a party of two, or if
+                  you’re stopping through town and need a restful place to
+                  retreat.
+                </p>
+              </div>
+              <div class="about-box">
+                <h6>The space</h6>
+                <p>
+                  An open living, dining, and kitchen area provide ample room in
+                  this cozy cottage. French double doors lead you out to the
+                  back patio to enjoy your own private outdoor space. A
+                  dedicated, covered parking spot for your use. The parking lot
+                  is shared with Hillcrest Estate guests.
+                </p>
+              </div>
+              <span class="more">Read more</span>
+            </div>
+            <div class="about__section">
+              <h5>What this place offers</h5>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="offer-box">
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 20 20"
+                        preserveAspectRatio="none"
+                        width="20"
+                        height="20"
+                      >
+                        <defs>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            id="svg1895248936_893"
+                          >
+                            <path
+                              d="M0.291748 6.875L9.66675 0.625L19.0417 6.875"
+                              stroke="#111111"
+                              stroke-width="1.5px"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"
+                            ></path>
+                            <path
+                              d="M1.54175 15.625H17.7917V19.375H1.54175V10.625"
+                              stroke="#111111"
+                              stroke-width="1.5px"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"
+                            ></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M4.04175 11.875H1.54175V15.625H6.54175V14.375C6.54175 12.9943 5.42246 11.875 4.04175 11.875Z"
+                              stroke="#111111"
+                              stroke-width="1.5px"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"
+                            ></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.2917 11.875H11.3592C9.93874 11.875 8.6402 12.6777 8.00508 13.9483L7.16675 15.625H17.7917V14.375C17.7917 12.9943 16.6725 11.875 15.2917 11.875Z"
+                              stroke="#111111"
+                              stroke-width="1.5px"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              fill="none"
+                            ></path>
+                          </svg>
+                        </defs>
+                        <g>
+                          <path
+                            d="M0.291748 6.875L9.66675 0.625L19.0417 6.875"
+                            stroke="#111111"
+                            stroke-width="1.5px"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            fill="none"
+                          ></path>
+                          <path
+                            d="M1.54175 15.625H17.7917V19.375H1.54175V10.625"
+                            stroke="#111111"
+                            stroke-width="1.5px"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            fill="none"
+                          ></path>
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M4.04175 11.875H1.54175V15.625H6.54175V14.375C6.54175 12.9943 5.42246 11.875 4.04175 11.875Z"
+                            stroke="#111111"
+                            stroke-width="1.5px"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            fill="none"
+                          ></path>
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M15.2917 11.875H11.3592C9.93874 11.875 8.6402 12.6777 8.00508 13.9483L7.16675 15.625H17.7917V14.375C17.7917 12.9943 16.6725 11.875 15.2917 11.875Z"
+                            stroke="#111111"
+                            stroke-width="1.5px"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            fill="none"
+                          ></path>
+                        </g>
+                      </svg>
+                    </span>
+                    <p class="place-offer">Dedicated Workspace</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="offer-box">
+                    <span
+                      ><svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"
+                        ></path></svg
+                    ></span>
+                    <p class="place-offer">Wifi</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="offer-box">
+                    <span
+                      ><svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path
+                          d="M8 5h2v3H8zm0 7h2v5H8zm10-9.99L6 2a2 2 0 00-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.11-.9-1.99-2-1.99zM18 20H6v-9.02h12V20zm0-11H6V4h12v5z"
+                        ></path></svg
+                    ></span>
+                    <p class="place-offer">Kitchen</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="offer-box">
+                    <span
+                      ><svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"
+                        ></path>
+                        <path
+                          d="M12 18c3.31 0 6-2.69 6-6s-2.69-6-6-6-6 2.69-6 6 2.69 6 6 6zm-.75-2.08c-.55-.1-1.05-.32-1.5-.62l1.5-1.5v2.12zm1.5 0v-2.11l1.5 1.5c-.45.3-.95.51-1.5.61zm2.56-1.67l-1.5-1.5h2.11c-.1.55-.31 1.05-.61 1.5zm.61-3h-2.11l1.5-1.5c.3.45.51.95.61 1.5zm-3.17-3.17c.55.1 1.05.32 1.5.62l-1.5 1.5V8.08zM12 11c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-.75-2.92v2.11l-1.5-1.5c.45-.3.95-.51 1.5-.61zM8.69 9.75l1.5 1.5H8.08c.1-.55.31-1.05.61-1.5zm1.5 3l-1.5 1.5c-.3-.44-.51-.95-.62-1.5h2.12z"
+                        ></path></svg
+                    ></span>
+                    <p class="place-offer">Heater</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="offer-box">
+                    <span
+                      ><svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M73 41v78h110V41H73zm128 0v78h238V41H201zm199 23a16 16 0 0 1 16 16 16 16 0 0 1-16 16 16 16 0 0 1-16-16 16 16 0 0 1 16-16zm-176 7h48v18h-48V71zm80 0h48v18h-48V71zM73 137v350h366V137H73zm183 30c82.7 0 150 67.3 150 150s-67.3 150-150 150-150-67.3-150-150 67.3-150 150-150zm0 18c-73 0-132 59-132 132s59 132 132 132c48.5 0 90.8-26 113.7-64.9L339.6 360a94.02 94.02 0 0 1-83.6 51 94.02 94.02 0 0 1-94-94 94.02 94.02 0 0 1 94-94 94.02 94.02 0 0 1 85.7 55.3l30.4-24.3c-22.3-41.1-65.9-69-116.1-69zm-6.9 62c-50.1 1.1-76.9 51-62 93.9-.7-37.8 30.1-78 62-93.9zm130.6 23.9l-32 25.6A94.02 94.02 0 0 1 350 317a94.02 94.02 0 0 1-3.5 25.5l31.4 25.2C384.4 352.1 388 335 388 317c0-16.2-2.9-31.8-8.3-46.1z"
+                        ></path></svg
+                    ></span>
+                    <p class="place-offer">Washing machine</p>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="offer-box">
+                    <span
+                      ><svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M8 16a3 3 0 0 1 -3 3"></path>
+                        <path d="M16 16a3 3 0 0 0 3 3"></path>
+                        <path d="M12 16v4"></path>
+                        <path
+                          d="M3 5m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+                        ></path>
+                        <path
+                          d="M7 13v-3a1 1 0 0 1 1 -1h8a1 1 0 0 1 1 1v3"
+                        ></path></svg
+                    ></span>
+                    <p class="place-offer">Air Conditioning</p>
+                  </div>
+                </div>
+              </div>
+              <span class="more">View more</span>
+            </div>
+          </div>
+          <div class="reviews">
+            <div class="reviews__top-content">
+              <h5>Reviews</h5>
+              <span
+                ><svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="20"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g fill="none">
+                    <path d="M0 0h24v24H0V0z"></path>
+                    <path d="M0 0h24v24H0V0z"></path>
+                  </g>
+                  <path
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+                  ></path>
+                </svg>
+                {{ house.average_rating | number : "1.1-2" }} - 124
+                reviews</span
+              >
+            </div>
+            <div class="reviews__ratings">
+              <ng-container *ngFor="let rate of house.ratings">
+                <div class="rating">
+                  <p>{{ rate.name }}</p>
+                  <div class="rating__bar-container">
+                    <div class="rating__bar">
+                      <span
+                        [style.width.%]="(rate.rating / 5) * 100"
+                        style="width: 100%"
+                      ></span>
+                    </div>
+                    {{ rate.rating | number : "1.1-2" }}
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="user_reviews">
+                  <div>
+                    <div class="review_header">
+                      <div class="review_header-image">
+                        <img src="assets/images/user.jpg" alt="" />
+                      </div>
+                      <div class="review_header-user">
+                        <h6>Steve</h6>
+                        <small class="date-may">May 2023</small>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Abbe's place was so wonderful and just what I needed. It was
+                    the perfect escape with a great wood stove, beautiful views,
+                    horses, and nearby skiing. I'm so grateful.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="user_reviews">
+                  <div>
+                    <div class="review_header">
+                      <div class="review_header-image">
+                        <img src="assets/images/user.jpg" alt="" />
+                      </div>
+                      <div class="review_header-user">
+                        <h6>Emily</h6>
+                        <small class="date-may">May 2023</small>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    The location was very quiet and peaceful. We loved the wood
+                    stove and the location was convenient, however the interior
+                    was not in the best shape.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="user_reviews">
+                  <div>
+                    <div class="review_header">
+                      <div class="review_header-image">
+                        <img src="assets/images/user.jpg" alt="" />
+                      </div>
+                      <div class="review_header-user">
+                        <h6>Micheal</h6>
+                        <small class="date-may">May 2023</small>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Overall a decent stay. I appreciated having a kitchen and
+                    access to firewood for the stove which heated up the little
+                    cabin very effectively.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="user_reviews">
+                  <div>
+                    <div class="review_header">
+                      <div class="review_header-image">
+                        <img src="assets/images/user.jpg" alt="" />
+                      </div>
+                      <div class="review_header-user">
+                        <h6>Jackson</h6>
+                        <small class="date-may">May 2023</small>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Abbe’s tiny house was a perfect spot to spend the weekend
+                    while skiing in the Tetons. The space was comfortable and
+                    the wood stove kept us very warm.
+                  </p>
+                </div>
+              </div>
+              <span class="more">View more</span>
+            </div>
+          </div>
+          <div class="location">
+            <h5>Where you'll be</h5>
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe
+                  style="border: 0"
+                  title="maps"
+                  width="100%"
+                  height="100%"
+                  id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=Pennhurst Ct Wilmington, North Carolina(NC), 28405&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                ></iframe>
+              </div>
+            </div>
+            <div class="location__about">
+              <h6>Pennhurst Ct Wilmington, North Carolina(NC), 28405</h6>
+              <p>
+                The property, given its close proximity to the refreshing
+                hillside town of Tagaytay and clear blue beaches of Nasugbu,
+                provides a quick escape from the hustle and bustle of city life.
+              </p>
+            </div>
+            <span class="more">View more</span>
+          </div>
+          <div class="host">
+            <h5>Host</h5>
+            <div class="host__top-content">
+              <div class="review_header">
+                <div class="review_header-image">
+                  <img src="assets/images/user.jpg" alt="" />
+                </div>
+                <div class="review_header-user">
+                  <h6>Hosted by Brenda</h6>
+                  <small>Joined August 2014</small>
+                </div>
+              </div>
+              <div class="host__contact" style="cursor: pointer">
+                Contact Host
+              </div>
+            </div>
+            <div class="host__badges">
+              <span
+                ><svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g fill="none">
+                    <path d="M0 0h24v24H0V0z"></path>
+                    <path d="M0 0h24v24H0V0z"></path>
+                  </g>
+                  <path
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+                  ></path></svg
+                ><small>2,433 Reviews</small></span
+              ><span
+                ><svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83-3.45-1.13-6-4.82-6-8.83v-4.7l6-2.25 6 2.25v4.7z"
+                  ></path>
+                </svg>
+                <small>Identity verified</small></span
+              ><span>
+                <!-- <svg stroke="currentColor"
+                                    fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M140.5 19.156V192.28l21.813 28.532h15.53V19.156H140.5zm56.03 0v201.656h122.064V19.156H196.53zm140.75 0v201.656h12.345l22.094-28.53V19.155h-34.44zM173.94 239.5v18.125H338.03V239.5H173.94zm30.78 36.813l8.032 10.53c-25.262 12.014-45.128 33.46-55.094 59.813l65.03 47.47 5.47 3.968-2.094 6.437-17.312 53.69 45.656-33.064 5.5-3.97 5.47 3.97 62.468 45.22c24.872-19.957 40.78-50.6 40.78-85.063 0-6.494-.573-12.854-1.655-19.032l-58.845 42.94-11-15.095L361.688 347c-10.683-28.55-32.932-51.392-61.125-62.78l6.125-7.908h-38.813l-25.5 78-17.75-5.812 23.594-72.188h-43.5zm-52.374 89.625c-1.123 6.286-1.72 12.76-1.72 19.375 0 32.163 13.84 61.008 35.907 80.937l19.69-61.03-53.876-39.283zm107.562 78.343l-51.53 37.314c15.266 8.124 32.707 12.72 51.25 12.72 18.673-.002 36.218-4.676 51.562-12.908l-51.282-37.125z">
+                                    </path>
+                                </svg> -->
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-77740580_2265"
+                >
+                  <path
+                    d="M12.9168 16.667C12.9168 18.2776 11.611 19.5833 10.0002 19.5833C8.38937 19.5833 7.0835 18.2776 7.0835 16.667C7.0835 15.0565 8.38936 13.75 10.0002 13.75C11.611 13.75 12.9168 15.0565 12.9168 16.667ZM4.58778 1.1774L4.5835 7.95937C4.5835 8.341 4.76418 8.70098 5.07417 8.93512L9.30526 12.1282C9.71115 12.4348 10.2789 12.4348 10.6856 12.129L14.9202 8.94012C15.2302 8.70764 15.4117 8.34767 15.4125 7.96687C15.4134 6.50698 15.416 2.79144 15.4168 1.18323C15.4168 0.763267 15.0666 0.42246 14.6341 0.42246L5.37046 0.416627C4.93887 0.415795 4.58863 0.756601 4.58778 1.1774Z"
+                    fill="#FFFFFF"
+                  ></path>
+                  <path
+                    d="M14.1668 7.91663L10.0002 4.83226L14.1668 1.66663V7.91663ZM9.05914 15.5729C8.62428 15.8379 8.3335 16.3031 8.3335 16.8349C8.3335 17.663 9.03102 18.3333 9.89196 18.3333C10.5737 18.3333 11.1456 17.9112 11.3582 17.3254L9.05914 15.5729Z"
+                    fill="#FFB400"
+                  ></path>
+                  <path
+                    d="M14.1668 7.91663L10.0002 11.0416L5.8335 7.91663V1.66663L14.1668 7.91663Z"
+                    fill="#FF5A5F"
+                  ></path>
+                  <path
+                    d="M9.99984 20C8.16146 20 6.6665 18.505 6.6665 16.6675C6.6665 14.8291 8.16146 13.3333 9.99984 13.3333C11.8382 13.3333 13.3332 14.8291 13.3332 16.6675C13.3332 18.505 11.8382 20 9.99984 20ZM9.99984 14.1667C8.62126 14.1667 7.49984 15.2889 7.49984 16.6675C7.49984 18.0452 8.62126 19.1667 9.99984 19.1667C11.3784 19.1667 12.4998 18.0452 12.4998 16.6675C12.4998 15.2889 11.3784 14.1667 9.99984 14.1667ZM10.0031 12.6465C9.62305 12.6465 9.243 12.5578 8.95166 12.3828L4.74674 9.1626C4.35531 8.85905 4.1665 8.45215 4.1665 7.91667V1.25C4.16732 0.939128 4.30648 0.622559 4.54818 0.380859C4.78988 0.138753 5.10563 0 5.41569 0H5.41732H14.5832C15.2375 0 15.8332 0.595703 15.8332 1.25V7.85645C15.8324 8.42 15.6313 8.87126 15.2537 9.16219L11.0863 12.356C10.7941 12.5505 10.3986 12.6465 10.0031 12.6465ZM5.41488 0.833333C5.3278 0.833333 5.22119 0.885417 5.13737 0.969645C5.05273 1.05469 4.99984 1.16211 4.99984 1.25081V7.91667C4.99984 8.19214 5.07389 8.36182 5.25537 8.5026L9.4196 11.6951C9.6971 11.8579 10.3245 11.862 10.6037 11.6781L14.7467 8.50098C14.9136 8.3724 14.999 8.1547 14.9998 7.85522V1.24959C14.9998 1.05916 14.7736 0.833333 14.5832 0.833333H5.4165C5.4165 0.833333 5.41569 0.833333 5.41488 0.833333Z"
+                    fill="#484848"
+                  ></path>
+                </svg>
+                <small class="superh">Superhost</small>
+              </span>
+            </div>
+            <p>
+              As a mother of 4, living in Solana Beach for 25+ years, I love to
+              help families enjoy our beautiful area. Vacations are special and
+              we do our very best to make them affordable, enjoy…
+            </p>
+            <span class="more">View more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
